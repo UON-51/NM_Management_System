@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='NM_Management_System'
