@@ -46,6 +46,11 @@ final public Boolean[] server_status = {false};
     }
 
     public void B_Login(View view){ //管理會登入
+        Intent intent = new Intent();
+
+        intent.setClass(MainActivity.this,Main2Activity.class);
+        startActivity(intent);
+        /*
         login_info[0] = String.valueOf(Login_A.getText());
         login_info[1] = String.valueOf(Login_P.getText());
         Thread A_P_detection = new A_P_detection();
@@ -54,6 +59,7 @@ final public Boolean[] server_status = {false};
         try {
             A_P_detection.join();
             if (result[0]) {
+
                 Intent intent = new Intent();
 
                 intent.setClass(MainActivity.this,Main2Activity.class);
@@ -64,7 +70,7 @@ final public Boolean[] server_status = {false};
             } else {
             {
                 Toast.makeText(MainActivity.this,"帳號或密碼錯誤，請重式", Toast.LENGTH_LONG).show();}
-        }} catch (Exception e){e.printStackTrace();}
+        }} catch (Exception e){e.printStackTrace();} */
     }
     public class A_P_detection extends Thread{
     public void run(){

@@ -93,7 +93,7 @@ public class MysqlCon {
     }
 
     public void updata(String N,String A ,String P){
-        String sql = "insert into Store_Account (Name,Account,Password) values ('"+ N +"','"+ A +"','"+ P +"') ";
+        String sql = "insert into Store_Account (Name,Account,Password,is_paid) values ('"+ N +"','"+ A +"','"+ P +"','"+"0') ";
         try {
             Connection con = DriverManager.getConnection(url,db_user,db_password);
             Statement st = con.createStatement();
@@ -194,6 +194,7 @@ public class MysqlCon {
         }
         return B;
     }
+
     public void logout(){
         String sql = "exit";
         try {
@@ -206,6 +207,76 @@ public class MysqlCon {
 
             e.printStackTrace();
         }
+    }
+
+    public String[][] search_mod (String state,int L){
+        String[][] data = new String[L][3] ;
+         try {
+             Connection con = DriverManager.getConnection(url, db_user, db_password);
+             String sql = "select * from Store_Account where is_paid = "+ state + ";";
+             Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery(sql);
+             int i = 0;
+             while (rs.next())
+             {
+                 String Name = rs.getString("Name");
+                 String Account = rs.getString("Account");
+                 String is_paid = rs.getString("is_paid");
+                 int ii = 0;
+                 while (ii <= 2){
+
+                     switch (ii) {
+                         case 0:
+                             data[i][0]=Name;
+                             break;
+                         case 1:
+                             data[i][1]=Account;
+                             break;
+                         case 2:
+                             data[i][2]=is_paid;
+                             break;
+
+                     }
+                     ii++;
+                 }
+                 i++;
+             }
+             st.close();
+
+
+         } catch (Exception e){
+             e.printStackTrace();
+             Log.e("DB","search_mod has not do something");
+
+         }
+        return data;
+    }
+
+    public String search_mod_length(String mod){
+        //向伺服器詢問有幾筆資料
+        String E = "";
+
+        try {
+            Connection con =  DriverManager.getConnection(url, db_user, db_password);
+            Statement st = con.createStatement();
+            ResultSet data_length  = st.executeQuery("SELECT COUNT(Name) from Store_Account where is_paid="+ mod +";");
+            while (data_length.next())
+            {
+                try {
+                    E = data_length.getString("COUNT(Name)");
+
+                } catch (Exception e){
+                    e.printStackTrace();
+                    Log.e("DB","回傳資料為空");
+                }
+            }
+            st.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return E;
     }
 }
 

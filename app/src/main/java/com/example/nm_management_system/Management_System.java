@@ -141,8 +141,6 @@ public class Management_System extends AppCompatActivity {
             }catch (Exception e){}
         }
         catch (Exception e) {}
-
-
     }
 
 
@@ -259,9 +257,6 @@ public class Management_System extends AppCompatActivity {
             } catch (InterruptedException e){
 
             }
-
-
-
         }
     }
     public void detection_result(Boolean DR){
