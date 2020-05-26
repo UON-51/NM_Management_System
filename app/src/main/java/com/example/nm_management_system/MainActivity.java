@@ -57,7 +57,7 @@ final public Boolean[] server_status = {false};
             A_P_detection.join();
             if (result[0]) {
 
-                Intent intent = new Intent();
+                Intent intent = new Intent();//轉換頁面
 
                 intent.setClass(MainActivity.this,Main2Activity.class);
                 startActivity(intent);
