@@ -698,6 +698,7 @@ id LinerLayout_Edit
 id Login_A
 id Login_P
 id META
+id RecyclerView
 id SHIFT
 id SYM
 id accessibility_action_clickable_span
@@ -809,6 +810,7 @@ id info
 id info_chcekbox
 id invisible
 id italic
+id item
 id item_touch_helper_previous_elevation
 id left
 id line1
@@ -819,7 +821,6 @@ id linearLayout_add
 id linearLayout_management
 id listMode
 id list_item
-id list_view
 id login_B
 id logout_B
 id management_B

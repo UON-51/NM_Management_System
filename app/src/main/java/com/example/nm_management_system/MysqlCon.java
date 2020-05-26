@@ -278,6 +278,19 @@ public class MysqlCon {
 
         return E;
     }
+
+    public void is_paid_change(String changed_account,String C) {
+        String sql = "update Store_Account set is_paid = '"+ C +"' where Account = '"+ changed_account+"';";
+        try {
+            Connection con = DriverManager.getConnection(url,db_user,db_password);
+            Statement st = con.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+        } catch (SQLException e){
+            Log.e("ERROR-","updata error");
+            e.printStackTrace();
+        }
+    }
 }
 
 

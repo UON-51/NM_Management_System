@@ -36,7 +36,7 @@
 23        android:theme="@style/AppTheme" >
 23-->C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:14:9-40
 24        <activity android:name="com.example.nm_management_system.activity_edit" />
-24-->C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:15:9-60
+24-->C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:15:9-51
 24-->C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:15:19-48
 25        <activity android:name="com.example.nm_management_system.Main2Activity" />
 25-->C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:16:9-51

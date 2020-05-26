@@ -70,7 +70,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\al
 	android:theme
 		ADDED from C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:14:9-40
 activity#com.example.nm_management_system.activity_edit
-ADDED from C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:15:9-60
+ADDED from C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:15:9-51
 	android:name
 		ADDED from C:\Users\alex8\AndroidStudioProject\NM_Management_System\app\src\main\AndroidManifest.xml:15:19-48
 activity#com.example.nm_management_system.Main2Activity
