@@ -13,7 +13,9 @@ public class MysqlCon {
     String mysql_ip = "35.201.205.223";
     int mysql_port = 3306; // Port 預設為 3306
     String db_name = "Night_Market_management";
+    String db_name2 = "store_system";
     String url = "jdbc:mysql://"+mysql_ip+":"+mysql_port+"/"+db_name;
+    String url2 = "jdbc:mysql://"+mysql_ip+":"+mysql_port+"/"+db_name2;
     String db_user = "app-management";
     String db_password = "management";
 
@@ -92,13 +94,30 @@ public class MysqlCon {
         return X;
     }
 
-    public void updata(String N,String A ,String P){
+    public void update(String N,String A ,String P){
         String sql = "insert into Store_Account (Name,Account,Password,is_paid) values ('"+ N +"','"+ A +"','"+ P +"','"+"0') ";
+        String sql2 = "CREATE TABLE " + A +"_goods(name char(30),price int,quantity int,detail char(255))";
+        String sql3 = "CREATE TABLE " + A +"_orders(customerID char(30),orders char(255),total_price int,is_check char(1),is_done char(1))";
+        String sql4 = "insert into all_store(Name,Account,state) values('" + N +"','" +A + "',0);";
         try {
             Connection con = DriverManager.getConnection(url,db_user,db_password);
             Statement st = con.createStatement();
             st.executeUpdate(sql);
             st.close();
+            Log.v("update","update done");
+            con = DriverManager.getConnection(url2,db_user,db_password);
+            st = con.createStatement();
+            st.executeUpdate(sql2);
+            st.close();
+            Log.v("update2","update2 done");
+            st = con.createStatement();
+            st.executeUpdate(sql3);
+            st.close();
+            Log.v("update3","update3 done");
+            st = con.createStatement();
+            st.executeUpdate(sql4);
+            st.close();
+            Log.v("update4","update4 done");
         } catch (SQLException e){
             Log.e("ERROR-","updata error");
             e.printStackTrace();
@@ -106,12 +125,30 @@ public class MysqlCon {
 
     }
     public void edit(String ON,String N,String A,String P){
-        String sql = "update Store_Account set Name='" + N + "', Account='" + A + "', Password='" + P + "' where Name='"+ ON +"'";
+        String sql = "update Store_Account set Name='" + N + "', Account='" + A + "', Password='" + P + "' where Account='"+ ON +"'";
+        String sql2 = "alter table " + ON +"_goods rename to "+A+"_goods;";
+        String sql3 = "alter table " + ON +"_orders rename to "+A+"_orders;";
+        String sql4 = "update all_store set Name='" + N + "', Account='" + A + "' where Account = '" + ON +" ';";
         try {
             Connection con = DriverManager.getConnection(url,db_user,db_password);
             Statement st = con.createStatement();
             st.executeUpdate(sql);
             st.close();
+            Log.v("edit","edit done");
+            con = DriverManager.getConnection(url2,db_user,db_password);
+            st = con.createStatement();
+            st.executeUpdate(sql2);
+            st.close();
+            Log.v("edit2","edit2 done");
+            st = con.createStatement();
+            st.executeUpdate(sql3);
+            st.close();
+            Log.v("edit3","edit3 done");
+            st = con.createStatement();
+            st.executeUpdate(sql4);
+            st.close();
+            Log.v("edit4","edit4 done");
+
             Log.v("DB","資料修改成功");
         } catch (SQLException e){
             Log.e("ERROR-","edit error");
@@ -119,11 +156,25 @@ public class MysqlCon {
         }
     }
     public void delete(String N){
-        String sql = "delete  from Store_Account where Name='"+ N +"'";
+        String sql = "delete  from Store_Account where Account='"+ N +"'";
+        String sql2 = "drop table " + N +"_goods";
+        String sql3 = "drop table " + N +"_orders";
+        String sql4 = "delete  from all_store where Account='"+ N +"'";
+
         try {
             Connection con = DriverManager.getConnection(url,db_user,db_password);
             Statement st = con.createStatement();
             st.executeUpdate(sql);
+            st.close();
+            con = DriverManager.getConnection(url2,db_user,db_password);
+            st = con.createStatement();
+            st.executeUpdate(sql2);
+            st.close();
+            st = con.createStatement();
+            st.executeUpdate(sql3);
+            st.close();
+            st = con.createStatement();
+            st.executeUpdate(sql4);
             st.close();
             Log.v("DB","資料修改成功");
         } catch (SQLException e){

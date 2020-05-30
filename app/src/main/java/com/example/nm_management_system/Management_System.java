@@ -159,7 +159,7 @@ public class Management_System extends AppCompatActivity {
         public void run() {
             MysqlCon con = new MysqlCon();
             con.connect_sql();
-            con.delete(data[IntArray[1]][0]);
+            con.delete(data[IntArray[1]][1]);
 
 
         }
@@ -183,7 +183,7 @@ public class Management_System extends AppCompatActivity {
             String new_name = String.valueOf(Etxt_E_Name.getText());
             String new_account = String.valueOf(Etxt_E_Account.getText());
             String new_password = String.valueOf(Etxt_E_Password.getText());
-            con.edit(data[IntArray[1]][0],new_name,new_account,new_password);
+            con.edit(data[IntArray[1]][1],new_name,new_account,new_password);
 
         }
     }
@@ -291,7 +291,7 @@ public class Management_System extends AppCompatActivity {
             public void run(){
         MysqlCon con = new MysqlCon();
         con.connect_sql();
-        con.updata(txt_name,txt_account,txt_password);
+        con.update(txt_name,txt_account,txt_password);
     }
         }).start();
     }

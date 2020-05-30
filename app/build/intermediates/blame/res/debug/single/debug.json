@@ -1168,6 +1168,10 @@
         "source": "C:\\Users\\alex8\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
+        "merged": "C:\\Users\\alex8\\AndroidStudioProject\\NM_Management_System\\app\\build\\intermediates\\res\\merged\\debug\\drawable_underline.xml.flat",
+        "source": "C:\\Users\\alex8\\AndroidStudioProject\\NM_Management_System\\app\\src\\main\\res\\drawable\\underline.xml"
+    },
+    {
         "merged": "C:\\Users\\alex8\\AndroidStudioProject\\NM_Management_System\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",
         "source": "C:\\Users\\alex8\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },

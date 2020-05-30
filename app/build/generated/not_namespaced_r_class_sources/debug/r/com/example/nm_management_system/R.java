@@ -3507,6 +3507,7 @@ public final class R {
     public static final int notify_panel_notification_icon_bg=0x7f06006c;
     public static final int tooltip_frame_dark=0x7f06006d;
     public static final int tooltip_frame_light=0x7f06006e;
+    public static final int underline=0x7f06006f;
   }
   public static final class id {
     public static final int ALT=0x7f070000;
