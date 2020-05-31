@@ -31,7 +31,7 @@ public class activity_edit extends AppCompatActivity {
     protected String[][] account_data = new String[][]{} ; //Save data //data[X][0~2] = {Name,Account,is_paid}
     protected Spinner spinner;  //spinner
     protected String state_selection; //Save witch mod user choosed
-    protected final int[] A = {0}; //Save search_data_langth
+    protected final int[] A = {0}; //Save search_data_length
     protected final String[] Change =new String[2];
     private  RecyclerView recyclerView;
     private Myadapter Myadapter;

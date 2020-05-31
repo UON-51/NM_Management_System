@@ -97,7 +97,7 @@ public class MysqlCon {
     public void update(String N,String A ,String P){
         String sql = "insert into Store_Account (Name,Account,Password,is_paid) values ('"+ N +"','"+ A +"','"+ P +"','"+"0') ";
         String sql2 = "CREATE TABLE " + A +"_goods(name char(30),price int,quantity int,detail char(255))";
-        String sql3 = "CREATE TABLE " + A +"_orders(customerID char(30),orders char(255),total_price int,is_check char(1),is_done char(1))";
+        String sql3 = "CREATE TABLE " + A +"_orders(customerID char(30),orders char(255),total_price int,is_check char(1),is_done char(1),is_cancel char(1),is_over char(1))";
         String sql4 = "insert into all_store(Name,Account,state) values('" + N +"','" +A + "',0);";
         try {
             Connection con = DriverManager.getConnection(url,db_user,db_password);
